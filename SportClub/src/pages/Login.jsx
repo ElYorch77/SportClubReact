@@ -34,10 +34,15 @@ function Login() {
   }
 
   return (
-    <Container className="d-flex justify-content-center align-items-center vh-100">
-      <Card style={{ width: "24rem" }} className="shadow">
-        <Card.Body>
-          <Card.Title className="text-center mb-4">SportClub Login</Card.Title>
+    <Container
+      className="d-flex justify-content-center align-items-center vh-100"
+      style={{ backgroundColor: "#f4f6f8" }}
+    >
+      <Card style={{ width: "24rem" }} className="shadow border-0">
+        <Card.Body className="p-4">
+          <div className="text-center mb-4">
+            <img src="/logo.png" alt="SportClub" style={{ height: "60px" }} />
+          </div>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3">
@@ -58,7 +63,12 @@ function Login() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
-            <Button type="submit" variant="primary" className="w-100" disabled={loading}>
+            <Button
+              type="submit"
+              className="w-100"
+              disabled={loading}
+              style={{ backgroundColor: "#2E1A47", border: "none", fontWeight: "bold" }}
+            >
               {loading ? (
                 <>
                   <Spinner size="sm" animation="border" /> Ingresando...
