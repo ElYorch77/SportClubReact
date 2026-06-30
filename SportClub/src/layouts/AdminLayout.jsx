@@ -13,14 +13,19 @@ function AdminLayout() {
 
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar expand="lg" style={{ backgroundColor: "#2E1A47" }}>
         <Container>
-          <Navbar.Brand>SportClub Admin</Navbar.Brand>
+          <Navbar.Brand>
+            <img src="/logo.png" alt="SportClub" height="40" />
+          </Navbar.Brand>
           <Nav className="me-auto">
-            <Link className="nav-link" to="/admin/dashboard">Dashboard</Link>
+            <Link className="nav-link text-white" to="/admin/dashboard">Dashboard</Link>
           </Nav>
-          <span className="text-white me-3">{user?.full_name}</span>
-          <Button variant="outline-light" onClick={handleLogout}>
+          <span className="me-3 text-white">{user?.full_name}</span>
+          <Button
+            onClick={handleLogout}
+            style={{ backgroundColor: "#F2B705", border: "none", color: "#2E1A47", fontWeight: "bold" }}
+          >
             Cerrar sesión
           </Button>
         </Container>
