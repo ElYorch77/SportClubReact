@@ -1,16 +1,34 @@
-import { Link, Outlet } from "react-router-dom"
+import { Link, Outlet, useNavigate } from "react-router-dom"
+import { Button, Container, Nav, Navbar } from "react-bootstrap"
+import { logout, getUser } from "../services/authService"
 
 function CoachLayout() {
+  const navigate = useNavigate()
+  const user = getUser()
+
+  const handleLogout = () => {
+    logout()
+    navigate("/login")
+  }
+
   return (
-    <div>
-      <nav>
-        <Link to="/">Inicio</Link> | 
-        <Link to="/coach/dashboard">Dashboard Coach</Link>
-      </nav>
-      <main>
+    <>
+      <Navbar bg="success" variant="dark" expand="lg">
+        <Container>
+          <Navbar.Brand>SportClub Coach</Navbar.Brand>
+          <Nav className="me-auto">
+            <Link className="nav-link" to="/coach/dashboard">Dashboard</Link>
+          </Nav>
+          <span className="text-white me-3">{user?.full_name}</span>
+          <Button variant="outline-light" onClick={handleLogout}>
+            Cerrar sesión
+          </Button>
+        </Container>
+      </Navbar>
+      <Container className="mt-4">
         <Outlet />
-      </main>
-    </div>
+      </Container>
+    </>
   )
 }
 
