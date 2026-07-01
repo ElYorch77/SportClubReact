@@ -20,6 +20,7 @@ function AdminLayout() {
           </Navbar.Brand>
           <Nav className="me-auto">
             <Link className="nav-link text-white" to="/admin/dashboard">Dashboard</Link>
+            <Link className="nav-link text-white" to="/admin/users">Usuarios</Link>
           </Nav>
           <span className="me-3 text-white">{user?.full_name}</span>
           <Button
