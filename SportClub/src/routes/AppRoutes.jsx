@@ -9,6 +9,7 @@ import UsersPage from "../pages/admin/UsersPage"
 import UserLayout from "../layouts/UserLayout"
 import SportsPage from "../pages/admin/SportsPage"
 import RoomsPage from "../pages/admin/RoomsPage"
+import SportRoomsPage from "../pages/admin/SportRoomsPage"
 import CoachLayout from "../layouts/CoachLayout"
 import AdminLayout from "../layouts/AdminLayout"
 import ProtectedRoute from "./ProtectedRoute"
@@ -35,6 +36,7 @@ function AppRoutes() {
           <Route path="users" element={<UsersPage />} />
           <Route path="sports" element={<SportsPage />} />
           <Route path="rooms" element={<RoomsPage />} />
+          <Route path="sport-rooms" element={<SportRoomsPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
