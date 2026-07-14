@@ -22,6 +22,7 @@ function UserLayout() {
             <Link className="nav-link text-white" to="/user/dashboard">Dashboard</Link>
             <Link className="nav-link text-white" to="/user/classes">Clases Disponibles</Link>
             <Link className="nav-link text-white" to="/user/reservations">Mis Reservas</Link>
+            <Link className="nav-link text-white" to="/user/profile">Mi Perfil</Link>
           </Nav>
           <span className="me-3 text-white">{user?.full_name}</span>
           <Button

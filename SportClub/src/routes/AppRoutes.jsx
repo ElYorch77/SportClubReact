@@ -19,6 +19,7 @@ import MyClassesPage from "../pages/coach/MyClassesPage"
 import MySchedulePage from "../pages/coach/MySchedulePage"
 import AvailableClassesPage from "../pages/user/AvailableClassesPage"
 import MyReservationsPage from "../pages/user/MyReservationsPage"
+import ProfilePage from "../pages/shared/ProfilePage"
 
 function AppRoutes() {
   return (
@@ -32,12 +33,14 @@ function AppRoutes() {
           <Route path="dashboard" element={<UserDashboard />} />
           <Route path="classes" element={<AvailableClassesPage />} />
           <Route path="reservations" element={<MyReservationsPage />} />
+          <Route path="profile" element={<ProfilePage />} />
         </Route>
 
         <Route path="/coach" element={<RoleRoute allowedRoles={["coach"]}><CoachLayout /></RoleRoute>}>
           <Route path="dashboard" element={<CoachDashboard />} />
           <Route path="my-classes" element={<MyClassesPage />} />
           <Route path="my-schedule" element={<MySchedulePage />} />
+          <Route path="profile" element={<ProfilePage />} />
         </Route>
 
         <Route path="/admin" element={<RoleRoute allowedRoles={["admin"]}><AdminLayout /></RoleRoute>}>
@@ -47,6 +50,7 @@ function AppRoutes() {
           <Route path="rooms" element={<RoomsPage />} />
           <Route path="sport-rooms" element={<SportRoomsPage />} />
           <Route path="class-schedules" element={<ClassSchedulesPage />} />
+          <Route path="profile" element={<ProfilePage />} />
         </Route>
       </Routes>
     </BrowserRouter>
