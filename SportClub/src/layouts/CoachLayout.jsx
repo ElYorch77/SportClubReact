@@ -20,6 +20,8 @@ function CoachLayout() {
           </Navbar.Brand>
           <Nav className="me-auto">
             <Link className="nav-link text-white" to="/coach/dashboard">Dashboard</Link>
+            <Link className="nav-link text-white" to="/coach/my-classes">Mis Clases</Link>
+            <Link className="nav-link text-white" to="/coach/my-schedule">Mi Horario</Link>
           </Nav>
           <span className="me-3 text-white">{user?.full_name}</span>
           <Button
