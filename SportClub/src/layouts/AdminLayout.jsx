@@ -21,6 +21,8 @@ function AdminLayout() {
           <Nav className="me-auto">
             <Link className="nav-link text-white" to="/admin/dashboard">Dashboard</Link>
             <Link className="nav-link text-white" to="/admin/users">Usuarios</Link>
+            <Link className="nav-link text-white" to="/admin/sports">Deportes</Link>
+            <Link className="nav-link text-white" to="/admin/rooms">Salas</Link>
           </Nav>
           <span className="me-3 text-white">{user?.full_name}</span>
           <Button
