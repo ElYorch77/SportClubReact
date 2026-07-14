@@ -14,6 +14,7 @@ import CoachLayout from "../layouts/CoachLayout"
 import AdminLayout from "../layouts/AdminLayout"
 import ProtectedRoute from "./ProtectedRoute"
 import RoleRoute from "./RoleRoute"
+import ClassSchedulesPage from "../pages/admin/ClassSchedulesPage"
 
 function AppRoutes() {
   return (
@@ -37,6 +38,7 @@ function AppRoutes() {
           <Route path="sports" element={<SportsPage />} />
           <Route path="rooms" element={<RoomsPage />} />
           <Route path="sport-rooms" element={<SportRoomsPage />} />
+          <Route path="class-schedules" element={<ClassSchedulesPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
