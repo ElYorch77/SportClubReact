@@ -17,6 +17,8 @@ import RoleRoute from "./RoleRoute"
 import ClassSchedulesPage from "../pages/admin/ClassSchedulesPage"
 import MyClassesPage from "../pages/coach/MyClassesPage"
 import MySchedulePage from "../pages/coach/MySchedulePage"
+import AvailableClassesPage from "../pages/user/AvailableClassesPage"
+import MyReservationsPage from "../pages/user/MyReservationsPage"
 
 function AppRoutes() {
   return (
@@ -28,6 +30,8 @@ function AppRoutes() {
 
         <Route path="/user" element={<RoleRoute allowedRoles={["user"]}><UserLayout /></RoleRoute>}>
           <Route path="dashboard" element={<UserDashboard />} />
+          <Route path="classes" element={<AvailableClassesPage />} />
+          <Route path="reservations" element={<MyReservationsPage />} />
         </Route>
 
         <Route path="/coach" element={<RoleRoute allowedRoles={["coach"]}><CoachLayout /></RoleRoute>}>
