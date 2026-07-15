@@ -35,10 +35,29 @@ function Login() {
 
   return (
     <Container
+      fluid
       className="d-flex justify-content-center align-items-center vh-100"
-      style={{ backgroundColor: "#f4f6f8" }}
+      style={{
+        backgroundColor: "#2E1A47",
+        backgroundImage: `repeating-linear-gradient(
+          45deg,
+          rgba(242, 183, 5, 0.08),
+          rgba(242, 183, 5, 0.08) 2px,
+          transparent 2px,
+          transparent 20px
+        )`,
+      }}
     >
-      <Card style={{ width: "24rem" }} className="shadow border-0">
+      <Card
+        style={{
+          width: "24rem",
+          borderTop: "4px solid #F2B705",
+          borderLeft: "none",
+          borderRight: "none",
+          borderBottom: "none",
+        }}
+        className="shadow-lg"
+      >
         <Card.Body className="p-4">
           <div className="text-center mb-4">
             <img src="/logo.png" alt="SportClub" style={{ height: "60px" }} />
