@@ -30,9 +30,6 @@ function ProfilePage() {
 
     try {
       const updatedUser = await updateUser(currentUser.id, payload)
-
-      // Actualiza el localStorage para que el navbar y el resto de la app
-      // reflejen el cambio sin necesidad de volver a loguearse
       saveSession(getToken(), updatedUser)
 
       await Swal.fire({
@@ -50,11 +47,39 @@ function ProfilePage() {
     }
   }
 
+  const roleLabels = { admin: "Administrador", coach: "Entrenador", user: "Usuario" }
+
   return (
     <div>
-      <h2 className="mb-3">Mi perfil</h2>
-      <Card style={{ maxWidth: 500 }}>
-        <Card.Body>
+      <h2 className="mb-1">Mi perfil</h2>
+      <p className="text-muted mb-4">Actualiza tus datos personales.</p>
+
+      <Card
+        style={{ maxWidth: 500, borderTop: "4px solid #F2B705", borderLeft: "none", borderRight: "none", borderBottom: "none" }}
+        className="shadow-sm"
+      >
+        <Card.Body className="p-4">
+          <div className="d-flex align-items-center mb-4">
+            <div
+              className="d-flex align-items-center justify-content-center me-3"
+              style={{
+                width: 56,
+                height: 56,
+                borderRadius: "50%",
+                backgroundColor: "#2E1A47",
+                color: "#F2B705",
+                fontWeight: "bold",
+                fontSize: "1.4rem",
+              }}
+            >
+              {currentUser?.full_name?.charAt(0).toUpperCase() || "?"}
+            </div>
+            <div>
+              <div className="fw-bold" style={{ color: "#2E1A47" }}>{currentUser?.full_name}</div>
+              <div className="text-muted small">{roleLabels[currentUser?.role] || currentUser?.role}</div>
+            </div>
+          </div>
+
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3">
               <Form.Label>Nombre completo</Form.Label>
@@ -92,7 +117,7 @@ function ProfilePage() {
               />
             </Form.Group>
 
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-4">
               <Form.Label>Fecha de nacimiento</Form.Label>
               <Form.Control
                 type="date"
@@ -105,6 +130,7 @@ function ProfilePage() {
             <Button
               type="submit"
               disabled={saving}
+              className="w-100"
               style={{ backgroundColor: "#2E1A47", border: "none", fontWeight: "bold" }}
             >
               {saving ? "Guardando..." : "Guardar cambios"}

@@ -12,7 +12,19 @@ function CoachLayout() {
   }
 
   return (
-    <>
+    <div
+      style={{
+        backgroundColor: "#2E1A47",
+        backgroundImage: `repeating-linear-gradient(
+          45deg,
+          rgba(242, 183, 5, 0.08),
+          rgba(242, 183, 5, 0.08) 2px,
+          transparent 2px,
+          transparent 20px
+        )`,
+        minHeight: "100vh",
+      }}
+    >
       <Navbar expand="lg" style={{ backgroundColor: "#2E1A47" }}>
         <Container>
           <Navbar.Brand>
@@ -33,10 +45,12 @@ function CoachLayout() {
           </Button>
         </Container>
       </Navbar>
-      <Container className="mt-4">
-        <Outlet />
+      <Container className="py-4">
+        <div className="bg-white rounded shadow-sm p-4">
+          <Outlet />
+        </div>
       </Container>
-    </>
+    </div>
   )
 }
 
